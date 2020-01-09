@@ -3,7 +3,13 @@ function commonEnd(a, b) {
     return false;
   }
 
-  // write your code here
+if (a[0] !== b[0]) {
+  return false;
+} else if (a[a.length - 1] !== b[b.length - 1] {
+  return false;
+} else {
+  return true;
+}
 }
 
 function endsMeet(values, n) {
