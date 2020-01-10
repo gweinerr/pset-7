@@ -3,17 +3,42 @@ function commonEnd(a, b) {
     return false;
   }
 
-if (a[0] !== b[0]) {
-  return false;
-} else if (a[a.length - 1] !== b[b.length - 1] {
-  return false;
-} else {
-  return true;
-}
+  afirst = a[0];
+  bfirst = b[0];
+  alast = a[a.length - 1];
+  blast = b[b.length - 1]
+
+  if (afirst === bfirst) {
+    return true;
+  } else if (alast === blast) {
+    return true;
+  } else {
+    return false;
+  }
 }
 
 function endsMeet(values, n) {
-  // write your code here
+  let new_array = [];
+
+  if (!values || values.length < n || n < 0 || !Number.isInteger(n)) {
+    return new_array;
+  } else {
+      if (n === 0) {
+        return values;
+      } else {
+        for (let z = 0; z < n; z++) {
+          if (!(values[z] === undefined)) {
+            new_array.push(values[z]);
+          }
+        }
+        for (let z = n; z > 0; z--) {
+          if (!(values[values.length - z] === undefined)) {
+            new_array.push(values[values.length - z]);
+          }
+        }
+        return new_array;
+      }
+   }
 }
 
 function difference(numbers) {
