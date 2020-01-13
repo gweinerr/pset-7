@@ -9,7 +9,7 @@ function commonEnd(a, b) {
   blast = b[b.length - 1]
 
   if (afirst === bfirst) {
-    return true;
+  return true;
   } else if (alast === blast) {
     return true;
   } else {
@@ -55,10 +55,26 @@ let maximum = Number(Math.max.apply(null, numbers));
   }
 
 
-function max(number) {
-  // write your code here
+function max(numbers) {
+  if (!numbers || numbers.length % 2 === 0 || numbers.length < 3 || !isNumeric(numbers)) {
+    return undefined;
+  } else {
+    let first = numbers[0];
+    let last = numbers[numbers.length - 1];
+    let middle = first + (last - first)/2;
+    let maximum = Math.max(first, middle, last);
+    return maximum;
+  }
 }
 
+function isNumeric(numbers) {
+  for (let i = 0; i < numbers.length; i++) {
+    if (Number.isNaN(numbers[i])) {
+      return false;
+    }
+  }
+  return true;
+}
 function middle(values) {
   // write your code here
 }
