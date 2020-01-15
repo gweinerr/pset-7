@@ -79,7 +79,7 @@ function isNumeric(numbers) {
 }
 
 function middle(values) {
-  if (!values || values.length % 2 === 0 || values.length < 3 || isNumeric(values)) {
+  if (!values || values.length % 2 === 0 || values.length < 3) {
     return [];
   } else {
     let newArray = [];
@@ -89,15 +89,7 @@ function middle(values) {
   }
 }
 
-function isNumeric(values) {
-  for (let i = 0; i < values.length; i++) {
-    if (typeof values[i] !== "number") {
-      return false;
-    }
-  }
 
-  return true;
-}
 
 function increasing(numbers) {
   // write your code here
