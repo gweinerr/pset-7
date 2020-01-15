@@ -20,7 +20,7 @@ function commonEnd(a, b) {
 function endsMeet(values, n) {
   let new_array = [];
 
-  if (!values || values.length < n || n < 0 || !Number.isInteger(n)) {
+  if (!values || values.length < n || n <= 0 || !Number.isInteger(n)) {
     return new_array;
   } else {
       if (n === 0) {
@@ -52,31 +52,51 @@ let maximum = Number(Math.max.apply(null, numbers));
     let answer = maximum - minimum;
     return answer;
     }
-  }
-
+}
 
 function max(numbers) {
   if (!numbers || numbers.length % 2 === 0 || numbers.length < 3 || !isNumeric(numbers)) {
     return undefined;
   } else {
+    let newArray = [];
     let first = numbers[0];
     let last = numbers[numbers.length - 1];
-    let middle = first + (last - first)/2;
-    let maximum = Math.max(first, middle, last);
+    let middle = numbers[Math.floor(numbers.length/2)];
+    newArray.push(first, middle, last);
+    let maximum = Number(Math.max.apply(null, newArray));
     return maximum;
   }
 }
 
 function isNumeric(numbers) {
   for (let i = 0; i < numbers.length; i++) {
-    if (Number.isNaN(numbers[i])) {
+    if (typeof numbers[i] !== "number") {
       return false;
     }
   }
+
   return true;
 }
+
 function middle(values) {
-  // write your code here
+  if (!values || values.length % 2 === 0 || values.length < 3 || isNumeric(values)) {
+    return [];
+  } else {
+    let newArray = [];
+    let middle = Math.floor(values.length/2);
+    newArray.push(values[middle - 1], values[middle], values[middle + 1]);
+    return newArray;
+  }
+}
+
+function isNumeric(values) {
+  for (let i = 0; i < values.length; i++) {
+    if (typeof values[i] !== "number") {
+      return false;
+    }
+  }
+
+  return true;
 }
 
 function increasing(numbers) {
@@ -99,6 +119,7 @@ function balance(numbers) {
 function clumps(values) {
   // write your code here
 }
+
 
 /*
  * Exports all functions for use in external grader.js file. Do not modify.
