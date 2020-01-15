@@ -83,16 +83,14 @@ function middle(values) {
     return [];
   } else {
     let newArray = [];
-    let middle = Math.floor(values.length/2);
-    newArray.push(values[middle - 1], values[middle], values[middle + 1]);
+    let mid = Math.floor(values.length/2);
+    newArray.push(values[mid - 1], values[mid], values[mid + 1]);
     return newArray;
   }
 }
 
-
-
 function increasing(numbers) {
-  // write your code here
+
 }
 
 function everywhere(values, x) {
