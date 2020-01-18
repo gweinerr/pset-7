@@ -184,9 +184,42 @@ if (!val || val.length < 1 || !x) {
 }
 
 function consecutive(numbers) {
-  // write your code here
-}
+let num = numbers
+let cnt;
+let num1;
+let num2;
+let num3;
 
+if (!num || num.length < 3 || num.some(isNaN)) {
+  return false;
+  cnt = false;
+} else {
+    for (let x = 0; x < num.length - 1; x++) {
+      if (Number.isInteger(numbers[x] !== true)) {
+        return false;
+        cnt = false;
+      }
+    }
+    for (let z = 0; z < numbers.length - 2; z++) {
+      num3 = num[z + 2];
+      num2 = num[z + 1];
+      num1 = num [z];
+
+    if (num3 % 2 === 0 && num2 % 2 === 0 && num1 % 2 === 0) {
+      return true;
+      cnt = true;
+    } else if (num3 % 2 === 1 && num2 % 2 === 1 && num1 % 2 === 1) {
+      return true;
+      cnt = true;
+    }
+}
+if (cnt == true) {
+  return true;
+} else {
+  return false;
+}
+}
+}
 function balance(numbers) {
   // write your code here
   console.log("test");
