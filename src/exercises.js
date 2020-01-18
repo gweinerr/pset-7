@@ -124,13 +124,64 @@ function increasing(numbers) {
 
 
 function everywhere(values, x) {
+
+let num1;
+let num2;
+let num3;
 let cnt;
 let val = values;
 
-if (!val || val.length < 1 || !x || val.some(isNaN)) {
-  
-}
+if (!val || val.length < 1 || !x) {
+  return false;
+} else {
+  for (let w = 0; w < val.length - 1; w++) {
+    if (val[w].isNaN) {
+      cnt = false;
+      return false;
+    }
+  }
+  for (let z = 0; z < val.length - 1; z++) {
+    if (z === 0) {
+      if (val[z] === x) {
+        cnt = true;
+      } else if (val[z + 1] === x) {
+        cnt = true;
+      } else {
+        return false;
 
+      }
+  } else if (z === (val.length - 1)) {
+    if (val[z] === x) {
+      cnt = true;
+    } else if (val[z - 1]) {
+      cnt = true;
+    } else {
+      cnt = false;
+      return false;
+    }
+ } else {
+   num1 = val[z - 1];
+   num2 = val[z];
+   num3 = val[z + 1];
+   if (num1 === x) {
+     cnt = true;
+   } else if (num2 === x) {
+     cnt = true;
+   } else if (num3 === x) {
+     cnt = true;
+   } else {
+     cnt = false;
+     return false;
+   }
+ }
+  }
+  if (cnt === false) {
+    return false;
+  } else {
+    return true;
+  }
+}
+}
 
 function consecutive(numbers) {
   // write your code here
