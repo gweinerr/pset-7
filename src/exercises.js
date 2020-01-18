@@ -260,7 +260,32 @@ if (!numbers || numbers.length < 2 || numbers.some(isNaN)) {
 }
 
 function clumps(values) {
+let clumpFinalIndex;
+let clump = 0;
+let value;
+let sameValues;
 
+if (!values) {
+  return -1;
+} else {
+   for (let w = 0; w < values.length - 1; w++) {
+       let test2 = w + 1;
+       let test1 = w;
+       value = values[test1];
+       sameValues = values[test2];
+       if (value === sameValues) {
+           while (value === sameValues) {
+               value = values[test1++];
+               sameValues = values[test2++];
+            }
+           clump++;
+           clumpFinalIndex = test1 - 1;
+           w = clumpFinalIndex;
+        } else {
+        }
+     }
+      return clump;
+   }
 }
 
 
