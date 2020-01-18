@@ -136,8 +136,8 @@ if (!val || val.length < 1 || !x) {
 } else {
   for (let w = 0; w < val.length - 1; w++) {
     if (val[w].isNaN) {
-      cnt = false;
       return false;
+      cnt = false;
     }
   }
   for (let z = 0; z < val.length - 1; z++) {
@@ -156,8 +156,8 @@ if (!val || val.length < 1 || !x) {
     } else if (val[z - 1]) {
       cnt = true;
     } else {
-      cnt = false;
       return false;
+      cnt = false;
     }
  } else {
    num1 = val[z - 1];
@@ -170,8 +170,8 @@ if (!val || val.length < 1 || !x) {
    } else if (num3 === x) {
      cnt = true;
    } else {
-     cnt = false;
      return false;
+     cnt = false;
    }
  }
   }
