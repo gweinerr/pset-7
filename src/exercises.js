@@ -14,7 +14,7 @@ function commonEnd(a, b) {
     return true;
   } else {
     return false;
-  }
+}
 }
 
 function endsMeet(values, n) {
@@ -90,11 +90,62 @@ function middle(values) {
 }
 
 function increasing(numbers) {
-
+  let num = numbers;
+  if (!num || num.length < 3 || num.some(isNaN)) {
+    return false;
+  }
+  for (x = 0; x < num.length; x++) {
+    if (num[x] % 1 != 0) {
+      return false;
+    }
+  }
+  let cnt = 0
+  let final = -1
+  for (z = 0; z < num.length; z++) {
+    if (num[z] === final + 1) {
+      final = num[z]
+      if (num[z + 1] === final + 1) {
+        return true;
+        cnt = 1;
+        break;
+      }
+      else {
+      final = -1;
+    }
+      }
+    else {
+      final = num[z];
+    }
+  }
+  if (cnt === 0) {
+    return false;
+  }
 }
 
+
 function everywhere(values, x) {
-  // write your code here
+let cnt = 0;
+let w = 0;
+
+while (w < values.length) {
+  if (!values || values.length < 1, !w) {
+    return false;
+    break;
+  }
+  if (values[w] === z) {
+    cnt += 1;
+  }
+  else if (values[w] !== z) {
+    cnt -= 1;
+  }
+}
+if (cnt >= 0) {
+  return true;
+}
+else {
+  return false;
+}
+w++
 }
 
 function consecutive(numbers) {
