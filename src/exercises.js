@@ -195,7 +195,7 @@ if (!num || num.length < 3 || num.some(isNaN)) {
   cnt = false;
 } else {
     for (let x = 0; x < num.length - 1; x++) {
-      if (Number.isInteger(numbers[x] !== true)) {
+      if (Number.isInteger(num[x] !== true)) {
         return false;
         cnt = false;
       }
@@ -221,12 +221,46 @@ if (cnt == true) {
 }
 }
 function balance(numbers) {
-  // write your code here
-  console.log("test");
+let sumHalf;
+let sumB = 0;
+let cnt;
+let sumOne = 0;
+
+if (!numbers || numbers.length < 2 || numbers.some(isNaN)) {
+    return false;
+    cnt = false;
+    } else {
+    for (let x = 0; x < numbers.length - 1; x++) {
+        if (Number.isInteger(numbers[x]) === false){
+            return false;
+            cnt = false;
+        }
+    }
+    for (let i = 0; i < numbers.length; i++){
+        sumOne = sumOne + numbers[i];
+      }
+    sumHalf = sumOne / 2;
+    if(sumOne % 2 === 1) {
+        return false;
+        cnt = false;
+    }
+    for (let w = 0; w < numbers.length - 1; w++) {
+        sumB += numbers[w];
+        if (sumB === sumHalf) {
+            return true;
+            cnt = true;
+        }
+    }
+    if (cnt === true) {
+        return true;
+    } else {
+        return false;
+    }
+}
 }
 
 function clumps(values) {
-  // write your code here
+
 }
 
 
