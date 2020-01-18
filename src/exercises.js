@@ -281,7 +281,6 @@ if (!values) {
            clump++;
            clumpFinalIndex = test1 - 1;
            w = clumpFinalIndex;
-        } else {
         }
      }
       return clump;
