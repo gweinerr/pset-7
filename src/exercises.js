@@ -245,7 +245,7 @@ if (!numbers || numbers.length < 2 || numbers.some(isNaN)) {
         cnt = false;
     }
     for (let w = 0; w < numbers.length - 1; w++) {
-        sumB += numbers[w];
+        sumB = sumB + numbers[w];
         if (sumB === sumHalf) {
             return true;
             cnt = true;
