@@ -124,29 +124,13 @@ function increasing(numbers) {
 
 
 function everywhere(values, x) {
-let cnt = 0;
-let w = 0;
+let cnt;
+let val = values;
 
-while (w < values.length) {
-  if (!values || values.length < 1, !w) {
-    return false;
-    break;
-  }
-  if (values[w] === z) {
-    cnt += 1;
-  }
-  else if (values[w] !== z) {
-    cnt -= 1;
-  }
+if (!val || val.length < 1 || !x || val.some(isNaN)) {
+  
 }
-if (cnt >= 0) {
-  return true;
-}
-else {
-  return false;
-}
-w++
-}
+
 
 function consecutive(numbers) {
   // write your code here
